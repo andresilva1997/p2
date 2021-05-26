@@ -3,5 +3,7 @@
     "Channel": "Channel",
     "Seasons": "Seasons",
     "Episodes": "Episodes",
-    "Release": "Release"
+    "Release": "Release",
+    "Studio is busy!":"Studio is busy!",
+    "Error while loading image.":"Error while loading image."
 }

@@ -10,7 +10,7 @@ import Eng from "./language/eng.json";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const language = window.navigator.language || navigator.browserLanguage;
-
+// const language = "es"
 ReactDOM.render(
     <IntlProvider locale={language} messages={language.startsWith("es") ? Esp : Eng}>
       <TableList />

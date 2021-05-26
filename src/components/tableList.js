@@ -1,15 +1,15 @@
 import React, { useEffect,useState } from "react";
-import { FormattedMessage } from "react-intl";
-import { FormattedDate, FormattedNumber, FormattedPlural } from "react-intl";
+import { FormattedDate, FormattedMessage } from "react-intl";
 import CardDetail from "./cardDetail";
 
 
 const TablesList = () => {
-    const url = "https://gist.githubusercontent.com/josejbocanegra/5dc69cb7feb7945ef58b9c3d84be2635/raw/e2d16f7440d51cae06a9daf37b0b66818dd1fe31/series-en.json";
-
+    const urlEn = "https://gist.githubusercontent.com/josejbocanegra/5dc69cb7feb7945ef58b9c3d84be2635/raw/e2d16f7440d51cae06a9daf37b0b66818dd1fe31/series-en.json";
+    const urlEs = "https://gist.githubusercontent.com/josejbocanegra/c55d86de9e0dae79e3308d95e78f997f/raw/a467415350e87c13faf9c8e843ea2fd20df056f3/series-es.json"
     const [ state, setstate] = useState({series:[]});
     const [selected, setSelected] = useState();
     useEffect(() => {
+        let url=(window.navigator.language.startsWith("es")) ? urlEs : urlEn;
         fetch(url)
         .then(ans => ans.json())
         .then(ans => {
@@ -48,21 +48,21 @@ const TablesList = () => {
 
     const produce = () =>{
         if(state.series.length===0){
-            return(<h2>Studio is busy!</h2>);
+            return(<div><h1><FormattedMessage id="Studio is busy!"/></h1></div>);
         }else{
             return(
                 <div class="container-fluid">
                 <div class="row">
                   <div class="col-8">
-                    <table className="table table-striped">
+                    <table className="table table-striped table-hover">
         <thead className="thead-dark">
           <tr>
             <th scope="col"><FormattedMessage id="id"/></th>
-            <th scope="col"><FormattedMessage id="name"/></th>
-            <th scope="col"><FormattedMessage id="channel"/></th>
-            <th scope="col"><FormattedMessage id="season"/></th>
-            <th scope="col"><FormattedMessage id="episodes"/></th>
-            <th scope="col"><FormattedMessage id="date"/></th>
+            <th scope="col"><FormattedMessage id="Name"/></th>
+            <th scope="col"><FormattedMessage id="Channel"/></th>
+            <th scope="col"><FormattedMessage id="Seasons"/></th>
+            <th scope="col"><FormattedMessage id="Episodes"/></th>
+            <th scope="col"><FormattedMessage id="Release"/></th>
           </tr>
         </thead>
         <tbody>

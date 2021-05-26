@@ -3,5 +3,7 @@
     "Channel": "Canal",
     "Seasons": "Temporadas",
     "Episodes": "Episodios",
-    "Release": "Lanzamiento"
+    "Release": "Lanzamiento",
+    "Studio is busy!":"¡El estudio de produccion esta ocupado!",
+    "Error while loading image.":"Ha habido un error mientras cargamos su imagen."
 }
